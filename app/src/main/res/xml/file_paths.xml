@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path
+        name="ip_int_root"
+        path="/" />
+
+    <cache-path
+        name="app_cache"
+        path="/" />
+
+    <external-path
+        name="ep_files_root"
+        path="Android/data/com.fht360.fht/" />
+
+    <external-path
+        name="ep_external_storage_root"
+        path="." />
+
+    <!--ImageSelector used,forbid anyone from modifying it-->
+    <external-path
+        name="images"
+        path="Pictures" />
+</paths>
