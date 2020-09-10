@@ -35,9 +35,6 @@ public class AppUtils {
     }
 
     public static void saveUserId(String userId) {
-        if (TextUtils.isEmpty(userId))
-            throw new NullPointerException("AppUtils.saveUserId() variable of userId cannot be null or length == 0,please check it!");
-
         saveString(KEY_USERID, userId);
     }
 

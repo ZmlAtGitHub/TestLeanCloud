@@ -47,20 +47,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void logout(String user_abc) {
-        LeanCloudManager.getInstance().closeClient(user_abc, new AVIMClientCallback() {
-            @Override
-            public void done(AVIMClient avimClient, AVIMException e) {
-                if (e == null) { /*断开连接成功*/
-                    ShowLog.show(TAG, "===>close leancloud client successfully,start to show LoginActivity");
-                } else {/*断开连接失败*/
-                    ShowLog.show(TAG, "===>closeLeanCloudClient with exception whose errorCode：" + e.getCode() + ",errorAppCode:" + e.getAppCode() + ",errorInfo：" + e.getMessage());
-                }
-            }
-        });
-
-    }
-
     private void registerAndLoginUser(String clientId) {
         ShowLog.show(TAG, "start to open client==>");
         LeanCloudManager.getInstance().openClient(clientId, false, new AVIMClientCallback() {
@@ -98,5 +84,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void logout(String user_abc) {
+        LeanCloudManager.getInstance().closeClient(user_abc, new AVIMClientCallback() {
+            @Override
+            public void done(AVIMClient avimClient, AVIMException e) {
+                if (e == null) { /*断开连接成功*/
+                    ShowLog.show(TAG, "===>close leancloud client successfully,start to show LoginActivity");
+                } else {/*断开连接失败*/
+                    ShowLog.show(TAG, "===>closeLeanCloudClient with exception whose errorCode：" + e.getCode() + ",errorAppCode:" + e.getAppCode() + ",errorInfo：" + e.getMessage());
+                }
+            }
+        });
+    }
 
 }
